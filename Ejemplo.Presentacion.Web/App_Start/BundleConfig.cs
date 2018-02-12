@@ -5,6 +5,18 @@ namespace Ejemplo.Presentacion.Web {
     public class BundleConfig {
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles) {
+            bundles.Add(new ScriptBundle("~/Script/Bundles")
+                  .Include(
+                  "~/bundles/inline.*",
+                  "~/bundles/polyfills.*",
+                  "~/bundles/scripts.*",
+                  "~/bundles/vendor.*",
+                  "~/bundles/main.*"));
+
+            bundles.Add(new StyleBundle("~/Content/Styles")
+                     .Include("~/bundles/styles.*",
+                               "~/Content/font-awesome.min.css"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
