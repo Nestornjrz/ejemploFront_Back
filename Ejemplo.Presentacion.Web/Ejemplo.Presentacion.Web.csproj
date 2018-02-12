@@ -44,6 +44,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -124,12 +132,6 @@
     <Reference Include="System.Web.Http.WebHost">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -178,6 +180,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\ClientesController.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -191,6 +194,18 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Bundles\color.c7a33805ffda0d32bd2a.png" />
+    <Content Include="Bundles\favicon.ico" />
+    <Content Include="Bundles\fontawesome-webfont.912ec66d7572ff821749.svg" />
+    <Content Include="Bundles\glyphicons-halflings-regular.89889688147bd7575d63.svg" />
+    <Content Include="Bundles\index.html" />
+    <Content Include="Bundles\inline.bundle.js" />
+    <Content Include="Bundles\line.567f57385ea3dde2c9ae.gif" />
+    <Content Include="Bundles\main.bundle.js" />
+    <Content Include="Bundles\polyfills.bundle.js" />
+    <Content Include="Bundles\scripts.bundle.js" />
+    <Content Include="Bundles\styles.bundle.js" />
+    <Content Include="Bundles\vendor.bundle.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
@@ -207,6 +222,20 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Bundles\inline.bundle.js.map" />
+    <Content Include="Bundles\main.bundle.js.map" />
+    <Content Include="Bundles\polyfills.bundle.js.map" />
+    <Content Include="Bundles\styles.bundle.js.map" />
+    <Content Include="Bundles\vendor.bundle.js.map" />
+    <Content Include="Bundles\fontawesome-webfont.674f50d287a8c48dc19b.eot" />
+    <Content Include="Bundles\fontawesome-webfont.af7ae505a9eed503f8b8.woff2" />
+    <Content Include="Bundles\fontawesome-webfont.b06871f281fee6b241d6.ttf" />
+    <Content Include="Bundles\fontawesome-webfont.fee66e712a8a08eef580.woff" />
+    <Content Include="Bundles\glyphicons-halflings-regular.448c34a56d699c29117a.woff2" />
+    <Content Include="Bundles\glyphicons-halflings-regular.e18bbf611f2a2e43afc0.ttf" />
+    <Content Include="Bundles\glyphicons-halflings-regular.f4769f9bdb7466be6508.eot" />
+    <Content Include="Bundles\glyphicons-halflings-regular.fa2772327f55d8198301.woff" />
+    <Content Include="Bundles\scripts.bundle.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -258,7 +287,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Bundles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -267,6 +295,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ejemplo.Dominio.Dto\Ejemplo.Dominio.Dto.csproj">
+      <Project>{414ac456-eb5a-4dcd-bb87-30607b27867a}</Project>
+      <Name>Ejemplo.Dominio.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ejemplo.Dominio.Managers\Ejemplo.Dominio.Managers.csproj">
+      <Project>{A0C7A2C4-C163-42C7-8A26-A01F77409F7C}</Project>
+      <Name>Ejemplo.Dominio.Managers</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
