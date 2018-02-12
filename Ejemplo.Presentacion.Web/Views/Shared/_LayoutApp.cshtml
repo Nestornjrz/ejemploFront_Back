@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluaciones</title>
+    @RenderSection("head", required: false)
+    @Styles.Render("~/Content/Styles")
+    <meta name="description" content="Pagina de evaluacion" />
+</head>
+<body>
+    <header class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 well">
+                @Html.ActionLink("VOLVER AL MENU", "Index", "Home", null,
+               new { @class = "btn btn-lg btn-info btn-block" })
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+    <hr />
+    <footer style="position:fixed;bottom:0">
+        <p>&copy; @DateTime.Now.Year - Nestor</p>
+    </footer>
+    @Scripts.Render("~/Script/Bundles")
+</body>
+</html>
