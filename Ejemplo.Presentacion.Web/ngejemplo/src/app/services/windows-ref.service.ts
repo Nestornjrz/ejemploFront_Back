@@ -21,7 +21,7 @@ export class WindowsRefService {
       port = '5300'; // Es el puerto de desarrollo cuando se ejecuta la web api para este proyecto
       protocol = 'http:';
     }
-    if (hostname === 'www.laaragonesa.com.py') {
+    if (hostname === 'www.dominio.com.py') {
       aplicacion = '/Evaluaciones';
     }
     return protocol + '//' + hostname + ':' + port + aplicacion;
