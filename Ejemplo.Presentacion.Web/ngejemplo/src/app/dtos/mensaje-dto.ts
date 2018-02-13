@@ -1,10 +1,10 @@
 export class MensajeDto {
     constructor() {
-        this.error = false;
+        this.Error = false;
     }
-    error: boolean;
-    mensajeDelProceso: string;
-    valor: string;
-    objetoDto: any;
+    Error: boolean;
+    MensajeDelProceso: string;
+    Valor: string;
+    ObjetoDto: any;
 
 }

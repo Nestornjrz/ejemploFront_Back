@@ -205,7 +205,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/inicio/inicio.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Aqui vamos a poner el listado</h1>\n"
+module.exports = "<h1>Aqui vamos a poner el listado</h1>\n<pre>{{respuesta | json}}</pre>"
 
 /***/ }),
 
