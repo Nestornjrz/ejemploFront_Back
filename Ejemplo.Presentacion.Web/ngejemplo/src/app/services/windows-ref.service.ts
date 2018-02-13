@@ -18,11 +18,11 @@ export class WindowsRefService {
     let port = this.nativeWindow.location.port;
     let aplicacion = '';
     if (port === '4200') {// Si se hace en el puerto que generalmente es de desarrollo con angular-cli
-      port = '5300'; // Es el puerto de desarrollo cuando se ejecuta la web api para este proyecto
+      port = '21025'; // Es el puerto de desarrollo cuando se ejecuta la web api para este proyecto
       protocol = 'http:';
     }
     if (hostname === 'www.dominio.com.py') {
-      aplicacion = '/Evaluaciones';
+      aplicacion = '/App';
     }
     return protocol + '//' + hostname + ':' + port + aplicacion;
   }
